@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /// <summary>
@@ -69,8 +70,39 @@ public static class GameObjectExtensions
             gameObject.SetActive(true); 
         }
     }
+    
+    /// <summary>
+    /// Gets the given component from all gameobjects in this array
+    /// </summary>
+    /// <param name="gameObjects">Gameobject array to extend</param>
+    /// <typeparam name="T">Component Type</typeparam>
+    /// <returns>Componenet Array</returns>
+    /// <exception cref="Exception">Component cannot be found</exception>
+    public static T[] GetComponentAll<T> (this GameObject[] gameObjects) where  T : Component
+    {
+        T[] components = new T[gameObjects.Length];
+        for (int i = 0; i < gameObjects.Length; i++)
+        {
+            components[i] = gameObjects[i].GetComponent<T>();
+            if (components[i] == null)
+            {
+                throw new Exception($"Component cannot be found on index {i}");
+            }
+        }
 
-  
+        return components;
+    }
+    /// <summary>
+    /// Gets the given component from all gameobjects in this list
+    /// </summary>
+    /// <param name="gameObjects">Gameobject list to extend</param>
+    /// <typeparam name="T">Component Type</typeparam>
+    /// <returns>Component List</returns>
+    public static List<T> GetComponentAll<T>(this List<GameObject> gameObjects) where T : Component
+    {
+         return gameObjects.ToArray().GetComponentAll<T>().ToList();
+    }
+
     #endregion
     
     #region PrivateMethods
