@@ -6,7 +6,7 @@ using TMPro;
 /// <summary>
 /// Labels tile coordinates as 2D Cartesian Coordinate System
 /// </summary>
-[ExecuteAlways]
+[ExecuteAlways][RequireComponent(typeof(TMP_Text))]
 public class CoordinateLabeler : MonoBehaviour
 {
     #region Serialized Fields

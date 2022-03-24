@@ -3,16 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
     #region Serialized Fields
-
+    [Tooltip("Needed number of hit to die")]
     [SerializeField] private int _maxHitPoints = 5;
+    
+    [Tooltip("Every time enemy die it max hit point increase by this amount")]
+    [SerializeField] private int _durabilityIncrease = 1;
     #endregion
 
     #region Private Fields
 
     private int _currentHitPoints = 0;
+
+    private Enemy _enemyMain;
     #endregion
 
     #region Public Properties
@@ -20,7 +26,12 @@ public class EnemyHealth : MonoBehaviour
 
     #region MonoBehaveMethods
 
-    private void Start()
+    private void Awake()
+    {
+        _enemyMain = GetComponent<Enemy>();
+    }
+
+    private void OnEnable()
     {
         _currentHitPoints = _maxHitPoints;
     }
@@ -28,7 +39,6 @@ public class EnemyHealth : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         ProcessHit();
-        
     }
     
     #endregion
@@ -37,13 +47,19 @@ public class EnemyHealth : MonoBehaviour
     #endregion
     
     #region PrivateMethods
-
+    /// <summary>
+    /// Processes tower hit to enemy
+    /// </summary>
     void ProcessHit()
     {
         _currentHitPoints--;
         if (_currentHitPoints < 1)
         {
-            Destroy(gameObject);
+            //In case of death by tower, disable object and give player a reward
+            gameObject.SetActive(false);
+            _maxHitPoints += _durabilityIncrease;
+            _enemyMain.GiveReward();
+            
         }
     }
 

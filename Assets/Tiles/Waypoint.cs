@@ -13,7 +13,7 @@ public class Waypoint : MonoBehaviour
     [Tooltip("Can player put a turrent on this tile?")] [SerializeField]
     private bool isPlaceable;
 
-    [SerializeField] private GameObject _turretPrefab;
+    [SerializeField] private Tower _turretPrefab;
 
     #endregion
 
@@ -34,6 +34,7 @@ public class Waypoint : MonoBehaviour
     {
         if (isPlaceable)
         {
+            
             PlaceTurret();
         }
     }
@@ -50,8 +51,9 @@ public class Waypoint : MonoBehaviour
     /// </summary>
     void PlaceTurret()
     {
-        Instantiate(_turretPrefab, transform.position, Quaternion.identity);
-        isPlaceable = false;
+        bool isPlaced = _turretPrefab.CreateTower(_turretPrefab,transform.position);
+       
+        isPlaceable = !isPlaced;
     }
 
     #endregion

@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaceable: 1
-  _turretPrefab: {fileID: 9190359849793649729, guid: 052c598e54e549c409d20c2e16043548, type: 3}
+  _turretPrefab: {fileID: -8535210410864365952, guid: 052c598e54e549c409d20c2e16043548, type: 3}
 --- !u!65 &2296099097718608163
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3650974520878139578}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
