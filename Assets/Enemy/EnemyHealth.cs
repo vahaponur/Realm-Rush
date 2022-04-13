@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
@@ -12,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
     
     [Tooltip("Every time enemy die it max hit point increase by this amount")]
     [SerializeField] private int _durabilityIncrease = 1;
+
+    [SerializeField] private Slider _healthBar;
     #endregion
 
     #region Private Fields
@@ -40,7 +43,12 @@ public class EnemyHealth : MonoBehaviour
     {
         ProcessHit();
     }
-    
+
+    private void LateUpdate()
+    {
+        UpdateHealthBar();
+    }
+
     #endregion
     
     #region PublicMethods
@@ -63,7 +71,11 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    
+    void UpdateHealthBar()
+    {
+        float rate = ((float) _currentHitPoints) /  _maxHitPoints;
+        _healthBar.value = rate;
+    }
 
     #endregion
 }

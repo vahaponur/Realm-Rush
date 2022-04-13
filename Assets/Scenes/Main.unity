@@ -6246,8 +6246,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c90595ee59597f4eba10449f3dd3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _defaultColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _blockedColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
+  _label: {fileID: 505445085}
+  _parentLocation: {x: -1, y: 7}
+  _locationStr: (-1, 7)
+  _parentWaypoint: {fileID: 2069967260}
 --- !u!114 &505445085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11630,8 +11642,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c90595ee59597f4eba10449f3dd3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _defaultColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _blockedColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
+  _label: {fileID: 911506394}
+  _parentLocation: {x: -6, y: 6}
+  _locationStr: (-6, 6)
+  _parentWaypoint: {fileID: 1904595218}
 --- !u!114 &911506394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14731,8 +14755,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c90595ee59597f4eba10449f3dd3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _defaultColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _blockedColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
+  _label: {fileID: 1358352204}
+  _parentLocation: {x: -1, y: 6}
+  _locationStr: (-1, 6)
+  _parentWaypoint: {fileID: 1067483121}
 --- !u!114 &1358352204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19066,8 +19102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c90595ee59597f4eba10449f3dd3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _defaultColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _blockedColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
+  _label: {fileID: 1772199760}
+  _parentLocation: {x: 9, y: 1}
+  _locationStr: (9, 1)
+  _parentWaypoint: {fileID: 674152455}
 --- !u!114 &1772199760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23341,8 +23389,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c90595ee59597f4eba10449f3dd3bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  _blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _defaultColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  _blockedColor:
+    r: 0.5
+    g: 0.5
+    b: 0.5
+    a: 1
+  _label: {fileID: 636773378769514579}
+  _parentLocation: {x: 9, y: -1}
+  _locationStr: (9, -1)
+  _parentWaypoint: {fileID: 8818922133434155289}
 --- !u!65 &2711723392374286796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23381,6 +23441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3569144610269073660, guid: 081402da1e012a04abaeb58cbf2f4478, type: 3}
+      propertyPath: _startBalance
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 3569144610269073660, guid: 081402da1e012a04abaeb58cbf2f4478, type: 3}
       propertyPath: _balanceUItext
       value: 
